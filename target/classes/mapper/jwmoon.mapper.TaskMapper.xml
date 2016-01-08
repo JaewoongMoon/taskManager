@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="jwmoon.taskManager.mapper.TaskMapper">
+
+    <select id="selectTasks" parameterType="java.util.Map" resultType="jwmoon.taskManager.domain.Task">
+		 select seq,
+				category1,
+		        category2,
+		        category3,
+		        task_desc as taskDesc,
+		        priority,
+		        origEst,
+		        currEst,
+		        elapsed,
+		        remain,
+		        reg_date as regDate,
+		        reg_id as regId,
+		        update_date as updateDate,
+		        update_id as updateId
+		   from tasks
+    </select>
+    
+    <insert id="insertTask" >
+     insert into tasks
+		 (category1, category2, category3, task_desc, priority, origEst, currEst, elapsed, remain, reg_date, reg_id)
+		 values
+		 (
+		  #{category1},
+		  #{category2},
+		  #{category3},
+		  #{taskDesc},
+		  #{priority},
+		  #{origEst},
+		  #{currEst},
+		  #{elapsed},
+		  #{remain},
+		  sysdate(),
+		  'jwmoon'
+		  )
+    </insert>
+
+</mapper>
