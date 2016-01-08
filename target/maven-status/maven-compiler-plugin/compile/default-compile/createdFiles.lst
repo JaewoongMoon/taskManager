@@ -1,5 +1,5 @@
-jwmoon\taskManager\dao\TaskDaoJdbc.class
 jwmoon\taskManager\domain\Task.class
 jwmoon\taskManager\service\ParseService.class
 jwmoon\taskManager\service\ExcelParseService.class
 jwmoon\taskManager\dao\TaskDao.class
+jwmoon\taskManager\mapper\TaskMapper.class
