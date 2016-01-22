@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="jwmoon.taskManager.mapper.TaskMapper">
 
-    <select id="selectTasks" parameterType="java.util.Map" resultType="jwmoon.taskManager.domain.Task">
+    <select id="selectAll" parameterType="java.util.Map" resultType="jwmoon.taskManager.domain.Task">
 		 select seq,
 				category1,
 		        category2,
@@ -38,6 +38,10 @@
 		  'jwmoon'
 		  )
     </insert>
+    
+    <delete id="deleteAll">
+    	delete from tasks
+    </delete>
     
 
 </mapper>

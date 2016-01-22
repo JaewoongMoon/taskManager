@@ -28,13 +28,15 @@ public class TaskMapperTest {
 	private static Logger log = (Logger) LoggerFactory.getLogger(TaskMapperTest.class);
 	
 	private Task task1;
+	private Task task2;
+	private Task task3;
 	
 	@Before
 	public void setUp(){
-		task1 = new Task();
-		task1.setCategory1("研究、教育");
-		task1.setCategory2("製品　STUDY");
-		task1.setCategory3("資料読み");
+		task1 = new Task("Maintenance", "WEB Report", "Bug修正, 改善", "AEGISWALL-416", 1, 0.5, 0.5, 0.5, 0.0);  
+		task2 = new Task("Project", "조사 프로젝트", "Aegis Wall DBスキーマ分析", "계획 (범위, 일정, 조사 방법) 작성", 1, 5.0, 5.5, 5.5, 0.0);  
+		task3 = new Task("協業", "技術関連", "오라클마스킹버그 패킷 덤프", "AEGISWALL-416", 1, 0.5, 0.5, 0.5, 0.0);  
+		
 	}
 	
 	
@@ -46,8 +48,8 @@ public class TaskMapperTest {
 	}
 	
 	@Test
-	public void selectTasks(){
-		List<Task> list = taskMapper.selectTasks();
+	public void selectAll(){
+		List<Task> list = taskMapper.selectAll();
 		log.info("size : " + list.size());
 		for(Task t : list){
 			log.info(t.getTaskDesc());
@@ -59,5 +61,14 @@ public class TaskMapperTest {
 		boolean result = taskMapper.insertTask(task1);
 		assertThat(result, is(true));
 	}
+	
+	@Test
+	public void deleteAll(){
+		boolean result = taskMapper.deleteAll();
+		assertThat(result, is(true));
+		List<Task> list = taskMapper.selectAll();
+		assertThat(list.size(), is(0));
+	}
+	
 	
 }

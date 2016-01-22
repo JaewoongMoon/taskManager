@@ -16,7 +16,9 @@ public interface TaskMapper {
 
 	public boolean insertTask(Task task);
 	
-	public List<Task> selectTasks();
+	public List<Task> selectAll();
 	
 	public Task getTask(int taskId);
+	
+	public boolean deleteAll();
 }

@@ -2,6 +2,8 @@ package jwmoon.taskManager.domain;
 
 public class Task {
 
+	private Integer taskId;
+	
 	private String category1;
 	
 	private String category2;
@@ -12,13 +14,33 @@ public class Task {
 	
 	private int priority;
 	
-	private int origEst;
+	private Double origEst;
 	
-	private int currEst;
+	private Double currEst;
 	
-	private int elapsed;
+	private Double elapsed;
 	
-	private int remain;
+	private Double remain;
+
+	public Task(String cate1, String cate2, String cate3, String taskDesc, int priority, Double origEst, Double currEst, Double elapsed, Double remain) {
+		this.category1 = cate1;
+		this.category2 = cate2;
+		this.category3 = cate3;
+		this.taskDesc = taskDesc;
+		this.priority = priority;
+		this.origEst = origEst;
+		this.currEst = currEst;
+		this.elapsed = elapsed;
+		this.remain = remain;
+	}
+	
+	public Integer getTaskId() {
+		return taskId;
+	}
+
+	public void setTaskId(Integer taskId) {
+		this.taskId = taskId;
+	}
 
 	public String getCategory1() {
 		return category1;
@@ -60,37 +82,47 @@ public class Task {
 		this.priority = priority;
 	}
 
-	public int getOrigEst() {
+
+	public Double getOrigEst() {
 		return origEst;
 	}
 
-	public void setOrigEst(int origEst) {
+
+	public void setOrigEst(Double origEst) {
 		this.origEst = origEst;
 	}
 
-	public int getCurrEst() {
+
+	public Double getCurrEst() {
 		return currEst;
 	}
 
-	public void setCurrEst(int currEst) {
+
+	public void setCurrEst(Double currEst) {
 		this.currEst = currEst;
 	}
 
-	public int getElapsed() {
+
+	public Double getElapsed() {
 		return elapsed;
 	}
 
-	public void setElapsed(int elapsed) {
+
+	public void setElapsed(Double elapsed) {
 		this.elapsed = elapsed;
 	}
 
-	public int getRemain() {
+
+	public Double getRemain() {
 		return remain;
 	}
 
-	public void setRemain(int remain) {
+
+	public void setRemain(Double remain) {
 		this.remain = remain;
 	}
+
+	
 	
 	
 	
